@@ -4,7 +4,6 @@ from pprint import pformat
 
 import requests
 
-from canvasapi import __version__
 from canvasapi.exceptions import (
     BadRequest,
     CanvasException,
@@ -160,6 +159,8 @@ class Requester(object):
         :type json: `bool`
         :rtype: :class:`requests.Response`
         """
+        from canvasapi import __version__
+
         full_url = _url if _url else "{}{}".format(self.base_url, endpoint)
 
         if not headers:
