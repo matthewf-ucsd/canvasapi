@@ -60,6 +60,9 @@ class Requester(object):
             auth_header = {'Authorization': 'Bearer {}'.format(self.access_token)}
             headers.update(auth_header)
 
+        if "User-Agent" not in headers:
+            headers["User-Agent"] = f"python-canvasapi/{__version__}"
+
         # Convert kwargs into list of 2-tuples and combine with _kwargs.
         _kwargs = _kwargs or []
         _kwargs.extend(kwargs.items())
