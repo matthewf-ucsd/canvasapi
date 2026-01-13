@@ -4,6 +4,7 @@ from pprint import pformat
 
 import requests
 
+from canvasapi import __version__
 from canvasapi.exceptions import (
     BadRequest,
     CanvasException,
